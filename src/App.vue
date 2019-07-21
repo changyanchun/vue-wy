@@ -14,10 +14,13 @@ import FooterGuide from '../src/components/FooterGuide/FootGuide.vue'
     components:{
       FooterGuide,
     },
+    mounted(){
+        this.$store.dispatch('reNav')
+    },
+    
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 
- 
 </style>

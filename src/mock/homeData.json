@@ -729,7 +729,7 @@
       "sellVolume": 8,
       "isCouponConflict": false,
       "colorNum": 0,
-      "primaryPicUrl": "http://yanxuan.nosdn.127.net/6ca5da68fa4e87086126f9a124442da9.jpg",
+      "primaryPicUrl": "https://yanxuan.nosdn.127.net/431a09a43914483f4d70aeda8ecb8a59.png?imageView&quality=65&thumbnail=330x330",
       "pieceUnitDesc": "件",
       "resourcesId": 0,
       "name": "严选X颐和园 联名款2019年历本",
@@ -780,7 +780,7 @@
       "sellVolume": 1401,
       "isCouponConflict": false,
       "colorNum": 0,
-      "primaryPicUrl": "http://yanxuan.nosdn.127.net/bf216b5af1dc8cdb5a70e87b8271028c.png",
+      "primaryPicUrl": "https://yanxuan.nosdn.127.net/431a09a43914483f4d70aeda8ecb8a59.png?imageView&quality=65&thumbnail=330x330",
       "pieceUnitDesc": "件",
       "resourcesId": 0,
       "name": "60s锦眠贡缎四件套",
@@ -832,7 +832,7 @@
       "sellVolume": 5236,
       "isCouponConflict": true,
       "colorNum": 0,
-      "primaryPicUrl": "http://yanxuan.nosdn.127.net/5351c9bffc8d8c17d7079428c5dd8a9e.jpg",
+      "primaryPicUrl": "https://yanxuan.nosdn.127.net/894b48e0a0dc9ed949da5a995e4114ad.png?imageView&quality=65&thumbnail=330x330",
       "pieceUnitDesc": "件",
       "resourcesId": 0,
       "name": "酵素去污系列 洗衣液3KG",
@@ -883,7 +883,7 @@
       "sellVolume": 335,
       "isCouponConflict": false,
       "colorNum": 0,
-      "primaryPicUrl": "http://yanxuan.nosdn.127.net/85b1d637ae9be7518d4616ec40ae5741.png",
+      "primaryPicUrl": "https://yanxuan.nosdn.127.net/1f93923086cbb7d63be958c920289f05.png?imageView&quality=65&thumbnail=330x330",
       "pieceUnitDesc": "件",
       "resourcesId": 0,
       "name": "星诞奇遇 圣诞树双层玻璃杯",
@@ -925,7 +925,7 @@
       "sellVolume": 1058,
       "isCouponConflict": false,
       "colorNum": 0,
-      "primaryPicUrl": "http://yanxuan.nosdn.127.net/5b874370ef8f63ee41865bbee4de2890.jpg",
+      "primaryPicUrl": "https://yanxuan.nosdn.127.net/1f93923086cbb7d63be958c920289f05.png?imageView&quality=65&thumbnail=330x330",
       "pieceUnitDesc": "件",
       "resourcesId": 0,
       "name": "网易智造PTC家用智能暖风机（焕新版）",
@@ -976,7 +976,7 @@
       "sellVolume": 62,
       "isCouponConflict": false,
       "colorNum": 0,
-      "primaryPicUrl": "http://yanxuan.nosdn.127.net/eb28be79a5b5e4f8ee7b6a3a9641dae5.png",
+      "primaryPicUrl": "https://yanxuan.nosdn.127.net/75bf2a5761cff9f170bd972b487b0d15.png?imageView&quality=65&thumbnail=330x330",
       "pieceUnitDesc": "件",
       "resourcesId": 0,
       "name": "【美好盒子】云朵棉花糖",
@@ -1190,34 +1190,44 @@
   "component8": "-----------------专题精选-----------------",
   "topicList": [
     {
-      "itemPicUrl": "https://yanxuan.nosdn.127.net/571e99aba1df41c9a7098a8c0b83526a.jpg",
+      "itemPicUrl": "https://yanxuan.nosdn.127.net/b2065eab67acc5923a8ec71167a35f6a.png?imageView&thumbnail=150x150&quality=75",
       "priceInfo": 49.00,
-      "scenePicUrl": "https://yanxuan.nosdn.127.net/571e99aba1df41c9a7098a8c0b83526a.jpg",
+      "scenePicUrl": "https://yanxuan.nosdn.127.net/569ab2c87df93c56de39b8c890463242.png?imageView&thumbnail=150x150&quality=75",
       "topicId": 5921,
-      "subtitle": "肉质剔透，甘润适口",
+      "subtitle": "9.9超值专区首发",
       "linkUrl": "http://m.you.163.com/topic/v1/pub/7LmkWLFHe7.html",
       "id": 102107000,
-      "title": "一个接近满分的黄桃罐头是怎样的？"
+      "title": "180款爆品新定价"
     },
     {
-      "itemPicUrl": "https://yanxuan.nosdn.127.net/a8db9df4270f8d329d125b239e8de186.jpg",
+      "itemPicUrl": "https://yanxuan.nosdn.127.net/cc814c4063600d56ddf9d654763e9c0a.png?imageView&thumbnail=150x150&quality=75",
       "priceInfo": 78.00,
-      "scenePicUrl": "https://yanxuan.nosdn.127.net/a8db9df4270f8d329d125b239e8de186.jpg",
+      "scenePicUrl": "https://yanxuan.nosdn.127.net/cc814c4063600d56ddf9d654763e9c0a.png?imageView&thumbnail=150x150&quality=75",
       "topicId": 5710,
-      "subtitle": "柳州味道，酸爽香臭",
+      "subtitle": "1元好货抄底",
       "linkUrl": "http://m.you.163.com/topic/v1/pub/lck4eif0N9.html",
       "id": 102107001,
-      "title": "不懂得吃螺蛳粉的人，怎么还敢称吃货？"
+      "title": "200+好物 5折封顶"
     },
     {
-      "itemPicUrl": "https://yanxuan.nosdn.127.net/93e9864a90adb4ca079f2404a9426453.jpg",
+      "itemPicUrl": "https://yanxuan.nosdn.127.net/b097972db0ed9d5b47fbed0e2dbd1d99.png?imageView&thumbnail=150x150&quality=75",
       "priceInfo": 9.90,
-      "scenePicUrl": "https://yanxuan.nosdn.127.net/93e9864a90adb4ca079f2404a9426453.jpg",
+      "scenePicUrl": "https://yanxuan.nosdn.127.net/5e818e36e0cfd0bb474c57f27e76b46d.png?imageView&thumbnail=150x150&quality=75",
       "topicId": 5823,
-      "subtitle": "住酒店也能像在家一样安心",
+      "subtitle": "断货补单王",
       "linkUrl": "http://m.you.163.com/topic/v1/pub/COzwlVyvkE.html",
       "id": 102107002,
-      "title": "担心“一块抹布擦所有”？住酒店这些神器一定要带"
+      "title": "严选必买爆款"
+    },
+    {
+      "itemPicUrl": "https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75",
+      "priceInfo": 9.90,
+      "scenePicUrl": "https://yanxuan.nosdn.127.net/445689c4faa55f8186c500e68bff73d6.png?imageView&thumbnail=150x150&quality=75",
+      "topicId": 5823,
+      "subtitle": "无限回购榜单",
+      "linkUrl": "http://m.you.163.com/topic/v1/pub/COzwlVyvkE.html",
+      "id": 102107002,
+      "title": "快消日用 超值5.9元起"
     }
   ],
   "component9": "-----------------众筹-----------------",
@@ -5794,6 +5804,26 @@
       "tag": "1元起包邮",
       "title": "新人拼团",
       "targetUrl": "https://m.you.163.com/pin/item/list"
+    }
+  ],
+  "specialTop":[
+    {
+      "background": "",
+      "specialUrl": "https://yanxuan.nosdn.127.net/a0102bcf19211bd9ad64bea167f0c080.jpg?imageView&thumbnail=575y322&enlarge=1&quality=75",
+      "top":"夏天的命都是这些神器给的！冷感被, 薄荷贴、制冰机……",
+      "crital":"超冷感夏日的8种打开方式"
+    },
+    {
+      "background": "",
+      "specialUrl": "https://yanxuan.nosdn.127.net/2bf63616fab33f40024db6755d54d45b.jpg?imageView&thumbnail=575y322&enlarge=1&quality=75",
+      "top":"这年头人不如猫是真的！看看严选猫粮工厂就知道了~",
+      "crital":"一起打开宠物国货新时代"
+    },
+    {
+      "background": "",
+      "specialUrl": "https://yanxuan.nosdn.127.net/f0fd126d67b48f40fc4180ff449ce593.jpg?imageView&thumbnail=575y322&enlarge=1&quality=75",
+      "top":"衣服不会脏、内裤天生抗菌、被子居然是凉的！天呐, 严选的日用好物也太黑科技了吧！",
+      "crital":"黑科技日用好物清单"
     }
   ]
 }

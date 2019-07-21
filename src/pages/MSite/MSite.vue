@@ -23,15 +23,7 @@
 
             <div class="header-extend-bottom">
               <ul class="header-extend-list">
-                <li class="active">推荐</li>
-                <li>居家生活</li>
-                <li>服饰鞋包</li>
-                <li>美食酒水</li>
-                <li>推荐</li>
-                <li>推荐</li>
-                <li>母婴亲子</li>
-                <li>推荐</li>
-                <li>数码家电</li>
+                <li :class="{active:currentIndex === index}" @click="toggle(index)" v-for="(cate,index) in cateList" :key="index">{{cate.name}}</li>
               </ul>
             </div>
             <!-- 遮罩层 -->
@@ -39,18 +31,10 @@
           </div>
           
           <!-- 头部下部分 -->
-          <div class="header_bottom" v-show="!isShow">
-            <div class="header_nav">
+          <div class="header_bottom" v-show="!isShow"  >
+            <div class="header_nav" ref="headerTop">
               <ul class="header_nav_list">
-                <li class="nav_item tj active nav_item-first">推荐</li>
-                <li class="nav_item">居家生活</li>
-                <li class="nav_item">服饰鞋包</li>
-                <li class="nav_item">美食酒水</li>
-                <li class="nav_item">个护清洁</li>
-                <li class="nav_item">母婴亲子</li>
-                <li class="nav_item">运动旅行</li>
-                <li class="nav_item">数码家电</li>
-                <li class="nav_item">全球特色</li>
+                <li class="nav_item  " :class="[{active:currentIndex === index},{first:currentIndex === index}]" @click="toggle(index)" v-for="(cateL,index) in cateList" :key="index">{{cateL.name}}</li>              
               </ul>
             </div>          
           </div>
@@ -68,8 +52,8 @@
       <div class="home_nav">
        <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="(home,index) in navList" :key="index">
-              <img :src="home.picUrl" alt="">
+            <div class="swiper-slide" v-for="(home,index) in navList.categoryModule" :key="index">
+              <img :src="home.titlePicUrl" alt="">
             </div>
         </div>
         <!-- 如果需要分页器 -->
@@ -81,58 +65,22 @@
       <div class="home-center-detail">
         <div class="home-center-grow">
           <span class="yi"></span>
-          <p>网易自营品牌</p>
+          <div>网易自营品牌</div>
         </div>
         <div class="home-center-grow">
           <span class="dun"></span>
-          <p>30天无忧退货</p>
+          <div>30天无忧退</div>
         </div>
         <div class="home-center-grow">
           <span class="price"></span>
-          <p>48小时快速退款</p>
+          <div>48小时快速</div>
         </div>
       </div>
       <div class="home-center-img">
         <ul class="home-center-list">
-          <li>
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-            <span>新品首发</span>
-          </li>
-          <li>
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-            <span>新品首发</span>
-          </li>
-          <li>
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-            <span>新品首发</span>
-          </li>
-          <li>
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-            <span>新品首发</span>
-          </li>
-          <li>
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-            <span>新品首发</span>
-          </li>
-          <li>
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-            <span>新品首发</span>
-          </li>
-          <li>
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-            <span>新品首发</span>
-          </li>
-          <li>
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-            <span>新品首发</span>
-          </li>
-          <li>
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-            <span>新品首发</span>
-          </li>
-          <li>
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-            <span>新品首发</span>
+          <li v-for="(item,index) in cateList" :key="index">
+            <img :src="item.bannerUrl" alt="">
+            <span>{{item.name}}</span>
           </li>
         </ul>
       </div>
@@ -142,87 +90,177 @@
       </div>
 
       <div class="home-puzzle">
-        <div class="home-puzzle-item">
+        <div class="home-puzzle-item" v-for="topic in navList.topicList" :key="topic.id">
           <div class="puzzle-item-top">
-            <span class="puzzle-1">几元就买到小确幸</span>
-            <span class="puzzle-2">珍惜唾手可得的小幸福</span>
+            <span class="puzzle-1">{{topic.subtitle}}</span>
+            <span class="puzzle-2">{{topic.title}}</span>
           </div>
           <div class="puzzle-item-bottom">
-            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
-            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
+            <img :src="topic.itemPicUrl" alt="">
+            <img :src="topic.scenePicUrl" alt="">
           </div>
-        </div>
-        <div class="home-puzzle-item">
-          <div class="puzzle-item-top">
-            <span class="puzzle-1">几元就买到小确幸</span>
-            <span class="puzzle-2">珍惜唾手可得的小幸福</span>
+        </div>     
+      </div>
+    </div>
+        <!-- 分割线 -->
+     <div class="home-line"></div>
+     <!-- 定位小礼物 -->
+      <div class="home-hert">
+        <i class="iconfont"></i>
+      </div>
+
+      <!-- 私人定制 -->
+       <div class="home-person"> 
+         <div class="person-top">私人定制</div>         
+       </div>
+       <PerBanner :shops="navList.personalShop"/>
+      <!-- 分割线 -->
+      <div class="home-line"></div>
+      <!-- 现时购 -->
+      <TimeBuy/>
+      <!-- 分割线 -->
+      <div class="home-line"></div>
+      
+      <!-- 新品首发 -->
+      <TimeBuy/>
+       <div class="home-line"></div>
+
+       <!-- 人气推荐 -->
+      <Sentiment/>
+      <div class="home-line"></div>
+      
+      <!-- 类目热销榜 -->
+      <Hot/>
+      <div class="home-line"></div>
+
+      <!-- 4张图片 -->
+      <FourImg/>
+      <div class="home-line"></div>
+
+      <!-- 品牌直销商 -->
+      <Brand/>
+      <div class="home-line"></div>
+
+      <!-- 专题精选 -->
+      <Special :specialData="navList.specialTop"/>
+      <div class="home-line"></div>
+
+      <!-- 众筹 -->
+      <Crowd/>
+      <div class="home-line crowd-active"></div>
+
+      <!-- 广告图 -->
+      <div class="home-agency">
+        <img src="https://yanxuan.nosdn.127.net/a415cf841405c9c5e14e435d8c57408b.jpg?imageView&thumbnail=750x0&quality=75" alt="">
+      </div>
+
+      <!-- 滑块图 -->
+      <Sliding :slids="navList.newItemList"/>
+      <div class="home-line slid-active"></div>
+
+      <!-- 底部 -->
+      <div class="home-bottom">
+        <div class="home-base">
+          <div class="base-top">
+            <button class="btn1">下载APP</button>
+            <button class="btn2">电脑版</button>
           </div>
-          <div class="puzzle-item-bottom">
-            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
-            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
-          </div>
-        </div>
-        <div class="home-puzzle-item">
-          <div class="puzzle-item-top">
-            <span class="puzzle-1">几元就买到小确幸</span>
-            <span class="puzzle-2">珍惜唾手可得的小幸福</span>
-          </div>
-          <div class="puzzle-item-bottom">
-            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
-            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
-          </div>
-        </div>
-        <div class="home-puzzle-item">
-          <div class="puzzle-item-top">
-            <span class="puzzle-1">几元就买到小确幸</span>
-            <span class="puzzle-2">珍惜唾手可得的小幸福</span>
-          </div>
-          <div class="puzzle-item-bottom">
-            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
-            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
+          <div class="base-bottom">
+            <p class="baseP-1">网易公司版权所有 © 1997-2019</p>
+            <p class="baseP-2">食品经营许可证：JY13301080111719</p>
           </div>
         </div>
       </div>
-    </div>
-     <div class="home-line"></div> 
+      
   </div>
+
 </template>
 
 <script type="text/ecmascript-6">
-
+  import Sliding from '../../components/Sliding/Sliding.vue' 
+  import Crowd from '../../components/Crowd/Crowd.vue' 
+  import Special from '../../components/Special/Special.vue' 
+  import PerBanner from '../../components/PerBanner/PerBanner.vue' 
+  import Brand from '../../components/Brand/Brand.vue' 
+  import FourImg from '../../components/FourImg/FourImg.vue'
+  import Hot from '../../components/Hot/Hot.vue'
+  import Sentiment from '../../components/Sentiment/Sentiment.vue'
+  import TimeBuy from '../../components/TimeBuy/TimeBuy.vue'
   import Swiper from 'swiper/dist/js/swiper' 
   import "swiper/dist/css/swiper.min.css"
-  import {reqHome} from '../../api'   
-  //import {mapState} from 'vuex'     
+  import BScroll from 'better-scroll'
+  import {reqHome,reqCategory} from '../../api'   
+  import {mapState} from 'vuex'     
   export default {
     data(){
       return{
         isShow:false,
-        navList:[]
+        currentIndex:0
+        //navList:[]
       }
+    },
+    created(){
+       this.$nextTick(()=>{
+            const topScroll = new BScroll(this.$refs.headerTop, {
+              //startX: 0,
+               probeType: 1,
+              click: true,
+              scrollX: true,
+              // 忽略竖直方向的滚动
+              scrollY: false,
+              eventPassthrough: "vertical"
+          })
+        })
+         this.$store.dispatch('recategorys')
+         this.$store.dispatch('reList')
     },
     async mounted(){
 
-        //this.$store.dispatch('reNav')
-        const result = await reqHome()
+        /* if(this.cateList.length>0){
+          this.initScroll()
+        } */
+
+        await this.$store.dispatch('reNav')
+       
+       /*  const result = await reqHome()
         console.log(result)
         if(result.code === 0){
           const navList = result.data.focusList
           this.navList = navList
-        }
-        var mySwiper = new Swiper ('.swiper-container', {
+        } */
+        new Swiper ('.swiper-container', {
           direction: 'horizontal', // 垂直切换选项
           loop: true, // 循环模式选项
-          autoplay:true, //自动轮播
+          //autoplay:true, //自动轮播
           // 如果需要分页器
           pagination: {el: '.swiper-pagination'}       
         })
+
+       
+       
     },
     computed:{
-      
+      ...mapState(['navList','categorys','cateList']),
+
       className(){
         return this.isShow?'go':'back'
       }
+    },
+    methods:{
+      toggle(index){
+        this.currentIndex = index
+      }
+    },
+    components:{
+      TimeBuy,
+      Sentiment,
+      Hot,
+      FourImg,
+      Brand,
+      PerBanner,
+      Special,
+      Crowd,
+      Sliding
     }
   }
 </script>
@@ -232,7 +270,12 @@
   #HomeContainer
     width 750px
     .home_header
+      background white
       height 150px
+      position fixed
+      top 0
+      left 0
+      z-index 88
       .header_top 
         padding 14px 30px
         display flex
@@ -313,12 +356,13 @@
           position relative
           z-index 2           
       .header_bottom
-        position relative
         height 60px
         padding-right 120px
         .header_nav      
           height 60px
           overflow hidden
+          width 750px
+          position relative
           .header_nav_list
             width 1400px
             display flex
@@ -336,7 +380,7 @@
                 width 88px
               &.active
                 color #b4282d  
-            .nav_item-first     
+            .first     
               &::after
                 content ''
                 display block
@@ -345,14 +389,16 @@
                 background #b4282d
                 position absolute
                 bottom 0
-                left 0
+                left 8px
                  
       .rotate 
-        width 100px
+        width 105px
         height 60px
-        position absolute
+        position fixed
         top 85px
         right 0
+        z-index 99
+        background white
         .rotate-jt 
           background-image url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/arrow-down-3-799ded53ea.png)
           width 30px
@@ -360,16 +406,16 @@
           position relative
           top 15px
           margin 0 auto
-          transition .5s
-         
+          transition .5s        
           &.go
             transform rotate(180deg)
           &.back
             transform rotate(0)    
     .home_nav
+      padding-top 150px
       /* display none */ 
       .swiper-container
-        width 100%
+        width 720px
         height 400px
         .swiper-wrapper
           width 100%
@@ -397,8 +443,8 @@
     .home-center
       width 100%
       .home-center-detail
-        padding 0 30px
-        width 100%
+        padding 0 15px
+        width 600px
         height 72px
         display flex
         text-align center
@@ -407,15 +453,23 @@
           font-size 24px
           display flex
           align-items center
-          margin-right 40px
+          justify-content center
+          padding-right 40px
+          box-sizing border-box
           span 
             width 32px
             height 32px
+            position relative
           .yi          
             background-image url(https://yanxuan.nosdn.127.net/a03dd909803b9ac032eba58b7253a2f6.png)
             background-size 100%              
-          p
+          div
             margin-left 8px
+            position relative
+            font-size 24px
+            width 146px
+            height 32px
+            line-height 32px
           .dun     
             background-image url(https://yanxuan.nosdn.127.net/2d0402ffcd52b3ec3b07422681c42a89.png)
             background-size 100%
@@ -454,19 +508,26 @@
         img
           width 100%  
       .home-puzzle
-        width 100%
+        box-sizing border-box
+        width 700px
         height 576px
+        margin-top 15px
+        margin-left 30px
         display flex
         flex-wrap wrap
         .home-puzzle-item
           width 343px
           height 264px 
           background #F5F5F5
-          margin 20px 3px 3px 20px 
+          margin-right 5px 
           display flex
           flex-direction column
           align-items center
           justify-content center
+        .home-puzzle-item:nth-child(3)
+          margin-top -30px
+        .home-puzzle-item:nth-child(4)
+          margin-top -30px  
           .puzzle-item-top
             display flex
             flex-direction column
@@ -476,6 +537,7 @@
               height 48px
               line-height 48px
               text-align center
+              box-sizing border-box
             .puzzle-2
               font-size 24px  
               padding-left 10px
@@ -485,5 +547,67 @@
     .home-line
       width 100%
       height 20px
-      background #F5F5F5              
+      background #F5F5F5
+      margin-top 30px
+      &.crowd-active
+        margin-top 70px
+      &.slid-active
+        margin-top -30px  
+    .home-hert
+      width 112px
+      height 80px
+      display none 
+    .home-person
+      width 750px
+      height 100px
+      .person-top
+        width 690px
+        height 100px
+        font-size 32px
+        color #333333
+        line-height 100px
+        padding-left 20px
+    .home-agency
+      width 750px
+      height 370px
+      padding-bottom 20px
+      img
+        width 100%    
+    .home-bottom
+      width 100%
+      height 244px
+      padding-bottom 100px
+      background #414141
+      .home-base
+        width 710px
+        height 100% 
+        padding 54px 20px 28px 
+        .base-top
+          width 710px
+          height 60px
+          text-aligin center
+          button
+            width 172px
+            height 62px
+            background #414141
+            color white
+            font-size 24px
+            border 0px
+            outline none
+          .btn1
+            margin-right 50px
+            margin-left 150px
+            border 1px solid #fff
+          .btn2
+            border 1px solid #fff  
+        .base-bottom
+          width 510px
+          height 64px
+          line-height 35px
+          position relative
+          top 30px 
+          left 150px    
+          color #999
+          .baseP-1
+            margin-left 30px                             
 </style>  

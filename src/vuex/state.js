@@ -1,3 +1,5 @@
 export default {
-    navList:{}
-}
+    navList:{},
+    categorys:{},
+    cateList:[]  
+} 
