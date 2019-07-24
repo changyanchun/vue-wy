@@ -26,7 +26,7 @@ import BScroll from 'better-scroll'
               scrollX: true,
               // 忽略竖直方向的滚动
               scrollY: false,
-              eventPassthrough: "vertical"
+
           })
         })
       }

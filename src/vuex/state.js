@@ -1,5 +1,6 @@
 export default {
     navList:{},
     categorys:{},
-    cateList:[]  
+    cateList:[],
+    searchNav:[]  
 } 

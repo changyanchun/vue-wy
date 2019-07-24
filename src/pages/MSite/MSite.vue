@@ -78,9 +78,9 @@
       </div>
       <div class="home-center-img">
         <ul class="home-center-list">
-          <li v-for="(item,index) in cateList" :key="index">
-            <img :src="item.bannerUrl" alt="">
-            <span>{{item.name}}</span>
+          <li v-for="(ban,index) in navList.Listban" :key="index">
+            <img :src="ban.msiteUrl" alt="">
+            <span>{{ban.title}}</span>
           </li>
         </ul>
       </div>

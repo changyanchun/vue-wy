@@ -1,8 +1,8 @@
 /* 
 包含n个用于间接修改状态数据的方法的对象
 */
-import {reqHome, reqCategory, reqCategoryList} from '../api'
-import {RECEIVE_NAVLIST, RECEIVE_CATEGORYS, RECEIVE_LIST} from './mutations_type'
+import {reqHome, reqCategory, reqCategoryList, reqNav} from '../api'
+import {RECEIVE_NAVLIST, RECEIVE_CATEGORYS, RECEIVE_LIST,RECEIVE_GENER} from './mutations_type'
 
 export default{  
     
@@ -36,6 +36,17 @@ export default{
         const cateList = result.data
         commit(RECEIVE_LIST,cateList)
     }
-  }
-
+  },
+  /* 
+   识物导航
+  */
+    async reqNavList({commit,state}){
+        const result = await reqNav()
+       // console.log(result)
+        if(result.code === '200'){
+            const gener = result.data
+           // console.log(gener)
+            commit(RECEIVE_GENER,gener)
+        }
+    }
 }

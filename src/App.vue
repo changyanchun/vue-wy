@@ -16,6 +16,7 @@ import FooterGuide from '../src/components/FooterGuide/FootGuide.vue'
     },
     mounted(){
         this.$store.dispatch('reNav')
+        this.$store.dispatch('reList')
     },
     
   }
