@@ -10,7 +10,7 @@
               <span class="search_title1" :class="{search_active:!isShow}" @click="toggleCut">甄选家</span>
             </div>
             <div class="search_top3">
-              <i class="iconfont icon-sousuo"></i>
+              <i class="iconfont icon-sousuo" @click="goHome('/sousuo')"></i>
               <i class="iconfont icon-gouwuche" @click="goHome('/order')"></i>
             </div>
           </div>     
@@ -49,6 +49,8 @@ import BigImg from '../../components/BigImg/BigImg.vue'
 import {reqLazy} from '../../api'
 import {mapState} from 'vuex'
 import BScroll from 'better-scroll'
+import { async } from 'q';
+
 
   export default {
     data(){
@@ -95,19 +97,27 @@ import BScroll from 'better-scroll'
             this.$router.replace('/zenxj')
           }
         },
-        async loadMore(){
+        loadMore(){
           this.isScroll = true
           const page = this.page += 1
           this.page = page
           const size = this.size
-          console.log(page)
-            const result = await reqLazy({page, size})
+         // console.log(page)
+           if(timer){
+             return 
+           }
+
+           const timer = setTimeout(async()=>{
+               //获取数据
+              const result = await reqLazy({page, size})
               if(result.code === '200'){
                 const foods = result.data.result
                 foods.forEach(food => {
                     this.searchList.push(food.topics[1])
                 })
               }
+
+           },2000)
         }
     },
     components:{

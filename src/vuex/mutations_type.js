@@ -9,3 +9,5 @@ export const RECEIVE_CATEGORYS = 'receive_categorys'
 export const RECEIVE_LIST = 'receive_list'
 
 export const RECEIVE_GENER = 'receive_gener'
+
+export const RECEIVE_SOUSUO = 'receive_sousuo'

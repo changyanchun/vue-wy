@@ -8,8 +8,8 @@
               <span class="search_title1"></span>
             </div>
             <div class="search_top3">
-              <i class="iconfont icon-sousuo"></i>
-              <i class="iconfont icon-gouwuche" @click="home('/order')"></i>
+              <i class="iconfont icon-sousuo" @click="goHome('/sousuo')"></i>
+              <i class="iconfont icon-gouwuche" @click="goHome('/order')"></i>
             </div>
       </div>
       <div class="profile_container">
@@ -17,11 +17,11 @@
             <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
           </div>
           <div class="profile_content">
-            <mt-button type="danger" class="btn1" @click="goHome('/phone')">
+            <mt-button type="danger" class="btn1" @click="goHome('/profile/phone')">
               <div class="phone1"></div>
               <span class="login1">手机号登录</span>
             </mt-button>
-            <mt-button plain class="btn2">
+            <mt-button plain class="btn2" @click="goHome('/profile/email')">
               <div class="phone2"></div>
               <span class="login2">邮箱快速登录</span>
             </mt-button>
@@ -148,6 +148,7 @@ import {Toast, MessageBox} from 'mint-ui'
           width 670px
           height 100px
           display flex
+          background #b4282d
           .phone1
             width 40px
             height 40px

@@ -23,5 +23,6 @@ import FooterGuide from '../src/components/FooterGuide/FootGuide.vue'
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-
+    #app
+      width 100%
 </style>

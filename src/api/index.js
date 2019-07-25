@@ -5,6 +5,7 @@
  
 
 import ajax from './ajax'
+import { get } from 'https';
 
 
 export const reqHome = () => ajax('/home')
@@ -19,4 +20,9 @@ export const reqLazy = ({page,size}) => ajax({
     url:'api/topic/v1/find/recAuto.json',
     method:'GET',
     params:{page,size}
+})
+
+export const reqSouList = ()=>ajax({
+    url:'api/xhr/search/init.json',
+    method:'GET'
 })

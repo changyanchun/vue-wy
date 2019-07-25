@@ -1,6 +1,6 @@
 <template>
     <div class="category">
-        <div class="category-top">
+        <div class="category-top" @click="goTo('/sousuo')">
             <i class="iconfont icon-sousuo Sou"></i>
             <input type="text" placeholder="搜索商品,共21812款好物">
         </div>
@@ -85,6 +85,9 @@ export default {
                 this.cateNum = subCateList
             }
             this.bannerUrl = cate.bannerUrl
+        },
+        goTo(path){
+          this.$router.replace(path)
         }
     }
 }

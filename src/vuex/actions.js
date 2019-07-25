@@ -1,8 +1,8 @@
 /* 
 包含n个用于间接修改状态数据的方法的对象
 */
-import {reqHome, reqCategory, reqCategoryList, reqNav} from '../api'
-import {RECEIVE_NAVLIST, RECEIVE_CATEGORYS, RECEIVE_LIST,RECEIVE_GENER} from './mutations_type'
+import {reqHome, reqCategory, reqCategoryList, reqNav,reqSouList} from '../api'
+import {RECEIVE_NAVLIST, RECEIVE_CATEGORYS, RECEIVE_LIST,RECEIVE_GENER,RECEIVE_SOUSUO} from './mutations_type'
 
 export default{  
     
@@ -48,5 +48,16 @@ export default{
            // console.log(gener)
             commit(RECEIVE_GENER,gener)
         }
+    },
+
+    /* 
+      搜索列表
+    */
+   async reqSouItem({commit,state}){
+    const result = await reqSouList()
+    if(result.code*1 === 200){
+        const souList = result.data.hotKeywordVOList
+        commit(RECEIVE_SOUSUO,souList)
     }
+   }
 }

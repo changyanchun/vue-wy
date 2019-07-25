@@ -17,29 +17,24 @@
             <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
           </div>
           <div class="phone_content">
-            <input type="text" class="inp1" placeholder="请输入手机号" v-model="phone" name="phone" v-validate="'required|mobile'">
+            <input type="text" class="inp1" placeholder="邮箱账号" v-model="email" name="email" v-validate="'required|nobile'">
             <div class="line"></div>
-            <span class='message' style="color: red;" v-show="errors.has('phone')">{{ errors.first('phone')}}</span>
-            <input type="text" class="inp2" placeholder="请输入短信">
-            <button class="btn" :class="{mark:computeTime>0}" :disabled="computeTime>0" @click="sendcode"><span class="btn-size">{{computeTime>0?`${computeTime}S`:'获取验证码'}}</span></button>
-            <div class="line"></div>
+            <span class='message' style="color: red;" v-show="errors.has('email')">{{ errors.first('email') }}</span>
+            <input type="text" class="inp2" placeholder="密码">
+            <div class="line1"></div>
             <div class="problem">
-              <span class="problem1">遇到问题？</span>
-              <span class="problem2">使用密码验证登录</span>
+              <span class="problem1">注册账号</span>
+              <span class="problem2">忘记密码</span>
             </div>
           </div>
 
           <div class="phone_bottom">
-            <mt-button type="danger" class="btn1" @click="login">
+            <mt-button type="danger" class="btn1" @click="loginTo">
               <span class="login1">登录</span>
             </mt-button>
-            <mt-button plain class="btn2" @click="goHome('/profile/email')">
-              <span class="login2">其他登录方式</span>
+            <mt-button plain class="btn2" @click="goHome('/profile')">
+              <span class="login2" >其他登录方式</span>
             </mt-button>
-            <div class="profile_phone">
-              <span>注册账号</span>
-              <span> > </span>
-            </div>
           </div>
        </div>
     </div>
@@ -49,29 +44,19 @@
   import {Toast} from 'mint-ui'
   export default {
       data(){
-        return {
-          computeTime:0,
-          phone:'' //手机号
-        }
+          return {
+              email:'',//邮箱
+          }
       },
       methods:{
         goHome(path){
             this.$router.push(path)
         },
-         /* 发送短信验证 */
-        sendcode(){
-          this.computeTime = 60
-          const timer = setInterval(()=>{
-            this.computeTime--
-            if(this.computeTime === 0){
-              clearInterval(timer)
-            }
-          },1000)
-        },
-          /* 登录统一验证 */
-          login(){
-              const {phone} =this
-              const  names = phone 
+
+         /* 登录统一验证 */
+        loginTo(){
+              const {email} =this
+              const  names = email 
               if(names){
                 const success =this.$validator.validateAll(names) // 对指定的所有表单项进行验证
                 if(success){
@@ -81,10 +66,11 @@
               }
           }
       }
+    
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus" scoped>
+<style lang="stylus" rel="stylesheet/stylus">
   @import '../../common/stylus/mixins.styl' 
     .mint-toast
       width 300px 
@@ -164,11 +150,11 @@
           .inp1
             width 600px
             height 45px
-            padding 28px 0 
+            padding 22px 0 22px 5px 
             position relative
             outline none 
           ::-webkit-input-placeholder
-            font-size 30px   
+            font-size 26px   
           .line
             width 670px
             height 1px
@@ -177,63 +163,50 @@
             left 0
             background #666
             opacity 0.5
+            margin-bottom 50px
           .message 
             display block
-            font-size 28px
-            height 50px  
-            line-height 50px
-            margin-top -40px
+            font-size 24px
+            height 40px  
+            line-height 40px
+            margin-top -40px  
+            background white
           .inp2
             width 380px
             height 45px
-            padding 28px 0 
+            padding 22px 0 22px 5px  
             outline none 
-          .line
+          .line1
             width 670px
             height 1px
             position relative
             top 0
             left 0
             background #666
-            opacity 0.5
-            margin-bottom 40px 
-          .btn
-            width 168px
-            height 56px
-            border-radius 5px
-            color #333
-            border 2px solid #7F7F7F 
-            background white
-            text-align center
-            line-height 50px  
-            position relative
-            left 100px    
-            outline none 
-          .mark
-            background-color rgba(0,0,0,.5)
-          .btn-size
-              font-size 28px
+            opacity 0.5 
+            margin-bottom 20px
           .problem  
             width 100%
             height 40px
             .problem1
-              font-size 30px
+              font-size 28px
               color $7F7F7F
-              opacity 0.7
+              opacity 0.5
               width 142px
               height 40px
               line-height 40px 
-              margin-right 280px
+              margin-right 440px
             .problem2
               width 228px
               height 40px
               line-height 40px  
-              font-size 30px
+              font-size 28px
+              opacity 0.5
         .phone_bottom
-          width 640px
+          width 690px
           height 292px
           position relative
-          top -40px
+          top -140px
           left 0
           .btn1
             width 670px
@@ -245,6 +218,7 @@
               height 32px
               font-size 28px
               color #FFFFFF  
+              opacity 0.5
               position relative
               top 0
               left 290px
@@ -261,15 +235,6 @@
               display block
               position relative
               top 0px
-              left 230px 
-          .profile_phone
-            width 200px
-            height 40px
-            line-height 40px
-            font-size 28px
-            color #333333   
-            position relative
-            left 260px
-            top 30px   
-             
+              left 230px    
+               
 </style>

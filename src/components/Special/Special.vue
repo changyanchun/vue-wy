@@ -47,10 +47,10 @@ import BScroll from 'better-scroll'
       .special-bottom
         width 750px
         height 408px 
+        overflow hidden
         .special-list
           width 1440px
-          height 378px
-          overflow hidden
+          height 378px          
           display flex        
           .special-item
             width 480px

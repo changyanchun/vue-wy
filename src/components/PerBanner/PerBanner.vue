@@ -1,5 +1,5 @@
 <template>
-          <div class="swiper-container Swiper" ref="Swiper">
+          <div class="swiper-container" ref="Swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(shops,index) in shopArr" :key="index">
                 <a href="javascript:" class="link-shop" v-for="(shop,index) in shops" :key="index">
@@ -23,7 +23,6 @@
  import Swiper from 'swiper/dist/js/swiper' 
   import "swiper/dist/css/swiper.min.css"
   export default {
-
      props:{
          shops:Array
      },
@@ -53,7 +52,7 @@
      watch:{
          shops(){
              this.$nextTick(()=>{
-                  new Swiper (this.$ref.Swiper, {
+                  new Swiper (this.$refs.Swiper, {
                    // direction: 'horizontal', // 垂直切换选项
                     loop: true, // 循环模式选项
                     //autoplay:true, //自动轮播
@@ -102,8 +101,8 @@
           bottom 60px
           left -10px
           .swiper-pagination-bullet
-            width 12px
-            height 12px
+            width 14px
+            height 14px
           .swiper-pagination-bullet-active 
             background #b4282d        
 </style>

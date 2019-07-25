@@ -1,4 +1,4 @@
-import {RECEIVE_NAVLIST, RECEIVE_CATEGORYS, RECEIVE_LIST,RECEIVE_GENER} from './mutations_type'
+import {RECEIVE_NAVLIST, RECEIVE_CATEGORYS, RECEIVE_LIST,RECEIVE_GENER, RECEIVE_SOUSUO} from './mutations_type'
 
 export default{
 
@@ -13,5 +13,8 @@ export default{
     },
     [RECEIVE_GENER](state,gener){
         state.searchNav = gener
+    },
+    [RECEIVE_SOUSUO](state,souList){
+        state.souList = souList
     }
 }

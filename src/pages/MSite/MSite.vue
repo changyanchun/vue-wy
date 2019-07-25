@@ -8,7 +8,7 @@
             <!-- logo图 -->
             <h1 class="logo"></h1>
             <!-- 中间部分 -->
-            <div class="header_top_center">
+            <div class="header_top_center" @click="goTo('/sousuo')">
               <i class="iconfont icon-sousuo"></i>
               <span>搜索商品,共6666款好物</span>
             </div>
@@ -90,7 +90,7 @@
       </div>
 
       <div class="home-puzzle">
-        <div class="home-puzzle-item" v-for="topic in navList.topicList" :key="topic.id">
+        <div class="home-puzzle-item" v-for="(topic,index) in navList.topicList" :key="index">
           <div class="puzzle-item-top">
             <span class="puzzle-1">{{topic.subtitle}}</span>
             <span class="puzzle-2">{{topic.title}}</span>
@@ -249,6 +249,10 @@
     methods:{
       toggle(index){
         this.currentIndex = index
+      },
+      goTo(path){
+        this.$router.replace(path)
+        this.$store.dispatch('reqSouItem')
       }
     },
     components:{
@@ -346,6 +350,7 @@
               margin 0 0 40px 30px
               background #FAFAFA 
               border 1px solid #ccc
+              border-radius 5px
               &.active
                 color #b4282d
                 border 1px solid #b4282d  
